@@ -1,0 +1,16 @@
+
+<html>
+<head>
+    <title>{{ nom }} {{ prenom }} portfolio</title>
+    <link href="{{ "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" }}" rel="stylesheet" />
+</head>
+
+<body>
+<div class="alert alert-success" align="center">
+    Je suis {{ nom }} {{ prenom }}.J'ai {{ age }}  et la langue est {{ langue }} et
+    la section est {{ section }} et le format est {{ format }}
+<br>
+    nous sommes le {{ "now" |date("m/d/Y") }}
+</div>
+</body>
+</html>

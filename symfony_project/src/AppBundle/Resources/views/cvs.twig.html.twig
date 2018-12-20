@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block design %}
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edmin</title>
+    <link type="text/css" href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link type="text/css" href="{{ asset('bootstrap/css/bootstrap-responsive.min.css') }}" rel="stylesheet">
+    <link type="text/css" href="{{ asset('css/theme.css') }}" rel="stylesheet">
+    <link type="text/css" href="{{ asset('images/icons/css/font-awesome.css') }}" rel="stylesheet">
+    <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
+          rel='stylesheet'>
+{% endblock %}
+
+{% block cv %}
+    <h1>L'ensemble des CVs</h1>
+    <ol class="breadcrumb">
+        <li><a href="{{ asset('index.html') }}"><i class="icon-dashboard"></i> Dashboard</a></li>
+        <li class="active"><i class="icon-file-alt"></i> Blank Page</li>
+        <li class="active"><i class="icon-file-alt"></i> L'ensemble des CVs</li>
+    </ol>
+
+    {% for pers in personnes %}
+
+    <div class="module-body">
+        <div class="row-fluid">
+            <div class="span6">
+                <div class="media user">
+
+                    <a class="media-avatar pull-left" href="#">
+
+                        <img src="{{ asset(pers.path) }}" width="50">
+                    </a>
+                    <div class="media-body">
+                        <h3 class="media-title">
+                            {{ pers.nom }}
+                            {{ pers.prenom }}
+                            {{pers.age }}
+
+                        </h3>
+                        <p>
+                            <small class="muted">28</small>
+                        </p>
+                        <div class="media-option btn-group shaded-icon">
+                            <button class="btn btn-small">
+                                <i class="fa fa-envelope"></i>
+                            </button>
+                            <button class="btn btn-small">
+                                <i class="fa fa-share"></i>
+                            </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}

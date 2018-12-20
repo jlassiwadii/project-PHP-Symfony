@@ -1,0 +1,46 @@
+{% extends "base.html.twig" %}
+
+{% block liste %}<h1>liste des personnes</h1>{% endblock %}
+
+   {% block body %}
+<h1>la liste des personnes</h1>
+
+   {% for personne in personnes %}
+<div class="module-body">
+    <div class="row-fluid">
+        <div class="span6">
+
+                    <h3 class="media-title">
+    {{ personne.nom }}
+    {{ personne.prenom }}
+    {{ personne.age }}
+                    </h3>
+       <!--{{ dump(personne.path) }}-->
+                        <div class="media user">
+
+                            <a class="media-avatar pull-left" href="#">
+
+                                <img src="{{ asset(personne.path) }}" width="60"/>
+                            </a>
+                            <div class="media-body">
+
+                    <p>
+                        <small class="muted">28</small>
+                    </p>
+                    <div class="media-option btn-group shaded-icon">
+                        <button class="btn btn-small">
+                            <i class="fa fa-envelope"></i>
+                        </button>
+                        <button class="btn btn-small">
+                            <i class="fa fa-share"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    {% endfor %}
+    {% endblock %}
+

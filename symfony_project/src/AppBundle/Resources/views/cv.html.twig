@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+{% block bootstrap %}
+    <style>
+        h1 {
+            border: 2px solid red;
+        }
+        ol {
+            border: 2px solid red;
+        }
+    </style>
+{% endblock %}
+
+{% block cv %}
+<h1>MON CV</h1>
+<ol class="breadcrumb">
+    <li><a href="{{ asset('index.html') }}"><i class="icon-dashboard"></i> Dashboard</a></li>
+    <li class="active"><i class="icon-file-alt"></i> Blank Page</li>
+    <li class="active"><i class="icon-file-alt"></i> MON CV</li>
+</ol>
+
+<div class="module-body">
+    <div class="row-fluid">
+        <div class="span6">
+            <div class="media user">
+                <a class="media-avatar pull-left" href="#">
+                    <img src="{{ asset('images/001.jpg') }}" width="80">
+                </a>
+                <div class="media-body">
+                    <h3 class="media-title">
+                        {{ nom }} {{ prenom }}
+                    </h3>
+                    <p>
+
+                        <small class="muted">28</small>
+                    </p>
+                    <div class="media-option btn-group shaded-icon">
+                        <button class="btn btn-small">
+                            <i class="fa fa-envelope"></i>
+                        </button>
+                        <button class="btn btn-small">
+                            <i class="fa fa-share"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        Ce CV sera affiché le {{ 'now'|date('m/d/Y') }}
+    </div>
+</div>
+    {% endblock %}

@@ -1,0 +1,28 @@
+wadii_first_homepage:
+  path:    /test/{nom}/{prenom}/{age}/{section}
+  defaults: { _controller: WadiiFirstBundle:Default:index}
+
+wadii_index_homepage:
+  path:    /index
+  defaults: { _controller: WadiiFirstBundle:ToDo:index}
+wadii_add_homepage:
+  path:    /add/{name}/{number}
+  defaults: { _controller: WadiiFirstBundle:ToDo:add}
+wadii_delete_homepage:
+  path:    /delete/{name}/{number}
+  defaults: { _controller: WadiiFirstBundle:ToDo:delete}
+
+wadii_update_homepage:
+  path:    /update/{name}/{contenu}
+  defaults: { _controller: WadiiFirstBundle:ToDo:update}
+
+wadii_reset_homepage:
+  path:    /reset
+  defaults: { _controller: WadiiFirstBundle:ToDo:reset}
+wadii_chemin_homepage:
+              path:    /chemin/{nom}/{prenom}/{age}/{langue}/{section}/{format}
+              defaults: { _controller: WadiiFirstBundle:Router:index, format:html}
+              requirements:
+                age: \d{2}
+                section: php|js
+                langue: en|fr
